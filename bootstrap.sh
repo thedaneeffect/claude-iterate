@@ -18,6 +18,11 @@ cp "$TMP_DIR/iterate.sh" ./iterate.sh
 cp "$TMP_DIR/SPEC.md" ./SPEC.md
 chmod +x ./iterate.sh
 
+# --- Copy skill ---
+
+mkdir -p .claude/skills/spec
+cp "$TMP_DIR/.claude/skills/spec/SKILL.md" .claude/skills/spec/SKILL.md
+
 # --- Create specs directory ---
 
 mkdir -p specs
@@ -45,7 +50,8 @@ echo ""
 echo "  iterate.sh    — Autonomous spec executor"
 echo "  SPEC.md       — Spec format reference"
 echo "  specs/        — Put your spec files here"
+echo "  /spec         — Claude skill for creating specs"
 echo ""
 echo "Usage:"
-echo "  1. Create a spec:  specs/my_feature.md"
+echo "  1. Create a spec:  /spec my_feature  (or write specs/my_feature.md manually)"
 echo "  2. Run it:         ./iterate.sh my_feature"

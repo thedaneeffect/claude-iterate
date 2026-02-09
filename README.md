@@ -16,13 +16,15 @@ This copies `iterate.sh` and `SPEC.md` into your project, creates a `specs/` dir
 
 ### 1. Define a spec
 
-Create a spec file interactively with Claude:
+Use the `/spec` slash command in Claude Code:
 
 ```
-Feed SPEC.md into a Claude session and describe what you want to build.
+/spec my_feature
 ```
 
-Or write one manually in `specs/my_feature.md`:
+Claude will explore your codebase, ask clarifying questions, and write a structured spec to `specs/my_feature.md`.
+
+Or write one manually:
 
 ```markdown
 # My Feature
@@ -64,6 +66,7 @@ Claude will:
 your-project/
 ├── iterate.sh          # Spec executor (committed)
 ├── SPEC.md             # Spec format reference (committed)
+├── .claude/skills/spec/ # /spec slash command (committed)
 ├── specs/              # Your spec files (committed)
 │   ├── my_feature.md
 │   └── .sessions/      # Session persistence (gitignored)
